@@ -19,7 +19,9 @@ formCalculate = document.querySelector('.form-calculate'),
 endButton = document.querySelector('.end-button'),
 total = document.querySelector('.total'),
 fastRange = document.querySelector('.fast-range'),
-totalPriceSum = document.querySelector('.total_price__sum');
+totalPriceSum = document.querySelector('.total_price__sum'),
+adapt = document.getElementById('adapt'),
+mobileTemplates = document.getElementById('mobileTemplates');
 
 function showElem(elem) {
     elem.style.display = 'block';
@@ -76,6 +78,13 @@ options = [];
 
 function handlerCallBackForm() {
 const target = event.target;
+
+if (adapt.checked){
+    mobileTemplates.disabled = false;
+} else {
+    mobileTemplates.disabled = true;
+    mobileTemplates.checked = false;
+}
 
 if (target.classList.contains('want-faster')) {
    /* if (target.checked) {
